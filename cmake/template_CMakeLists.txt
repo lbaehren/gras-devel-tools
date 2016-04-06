@@ -1,6 +1,6 @@
 ExternalProject_Add(<name>    # Name for custom target
   [DEPENDS projects...]       # Targets on which the project depends
-  [PREFIX dir]                # Root dir for entire project
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}
   [LIST_SEPARATOR sep]        # Sep to be replaced by ; in cmd lines
   [TMP_DIR dir]               # Directory to store temporary files
   [STAMP_DIR dir]             # Directory to store step timestamps
