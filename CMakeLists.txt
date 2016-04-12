@@ -29,6 +29,15 @@ endif (POLICY CMP0042)
 
 # CMake modules
 include(ExternalProject)
+include(CheckTypeSize)
+
+## =============================================================================
+##
+## System inspection
+##
+## =============================================================================
+
+check_type_size("void*" SIZEOF_VOID_P BUILTIN_TYPES_ONLY)
 
 ## =============================================================================
 ##
@@ -48,4 +57,23 @@ message ("------------------------------------------------------------")
 message ("[${PROJECT_NAME}] Configuration summary")
 message ("------------------------------------------------------------")
 message (" - Installation prefix : ${CMAKE_INSTALL_PREFIX}")
+message ("------------------------------------------------------------")
+message (" * System configuration" )
+message (" .. Processor type ............. = ${CMAKE_SYSTEM_PROCESSOR}" )
+message (" .. CMake executable ........... = ${CMAKE_COMMAND}" )
+message (" .. CMake version .............. = ${CMAKE_VERSION}" )
+message (" .. System name ................ = ${CMAKE_SYSTEM_NAME}" )
+message (" .. System version ............. = ${CMAKE_SYSTEM_VERSION}" )
+message (" .. C compiler ................. = ${CMAKE_C_COMPILER}" )
+message (" .. C compiler flags ........... = ${CMAKE_C_FLAGS}" )
+message (" .. C++ compiler ............... = ${CMAKE_CXX_COMPILER}" )
+message (" .. C++ compiler flags ......... = ${CMAKE_CXX_FLAGS}" )
+message (" .. size(void*) ................ = ${SIZEOF_VOID_P}")
+message (" .. Memory checker ............. = ${MEMORYCHECK_COMMAND}" )
+message ("------------------------------------------------------------")
+message (" * CMake configuration:" )
+message (" .. CMake executable ........... = ${CMAKE_COMMAND}" )
+message (" .. CMake version .............. = ${CMAKE_VERSION}" )
+message (" .. Module path ................ = ${CMAKE_MODULE_PATH}" )
+message (" .. Installation prefix ........ = ${CMAKE_INSTALL_PREFIX}" )
 message ("------------------------------------------------------------")
