@@ -1,14 +1,15 @@
-ExternalProject_Add(valgrind
+ExternalProject_Add(binutils
 #  [DEPENDS projects...]       # Targets on which the project depends
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}
  #--Download step--------------
-  URL http://valgrind.org/downloads/valgrind-3.11.0.tar.bz2
-  URL_MD5 4ea62074da73ae82e0162d6550d3f129
+  DOWNLOAD_DIR ${CMAKE_CURRENT_BINARY_DIR}/download
+  URL http://ftp.gnu.org/gnu/binutils/binutils-2.26.tar.gz
  #--Update/Patch step----------
 #  [UPDATE_COMMAND cmd...]     # Source work-tree update command
-  PATCH_COMMAND ${CMAKE_CURRENT_BINARY_DIR}/src/valgrind/autogen.sh
+#  [PATCH_COMMAND cmd...]      # Command to patch downloaded source
  #--Configure step-------------
-  CONFIGURE_COMMAND ${CMAKE_CURRENT_BINARY_DIR}/src/valgrind/configure --prefix=${CMAKE_INSTALL_PREFIX}
+  SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/source
+  CONFIGURE_COMMAND ${CMAKE_CURRENT_BINARY_DIR}/source/configure --prefix=${CMAKE_INSTALL_PREFIX}
 #  [CMAKE_COMMAND /.../cmake]  # Specify alternative cmake executable
 #  [CMAKE_GENERATOR gen]       # Specify generator for native build
 #  [CMAKE_GENERATOR_TOOLSET t] # Generator-specific toolset name
@@ -21,11 +22,5 @@ ExternalProject_Add(valgrind
  #--Install step---------------
   INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 #  [INSTALL_COMMAND cmd...]    # Command to drive install after build
- #--Test step------------------
-  TEST_BEFORE_INSTALL 1
-#  [TEST_AFTER_INSTALL 1]      # Add test step executed after install step
-  TEST_COMMAND make check
- #--Custom targets-------------
-#  [STEP_TARGETS st1 st2 ...]  # Generate custom targets for these steps
   )
 

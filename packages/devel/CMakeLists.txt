@@ -1,3 +1,4 @@
+add_subdirectory(binutils)
 add_subdirectory(doxygen)
 add_subdirectory(kcachegrind)
 add_subdirectory(kdelibs)
