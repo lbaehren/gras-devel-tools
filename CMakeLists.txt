@@ -31,13 +31,15 @@ endif (POLICY CMP0042)
 include(ExternalProject)
 include(CheckTypeSize)
 
-## =============================================================================
 ##
+## =============================================================================
 ## System inspection
 ##
 ## =============================================================================
 
 check_type_size("void*" SIZEOF_VOID_P BUILTIN_TYPES_ONLY)
+
+find_package(PythonInterp)
 
 ## =============================================================================
 ##
@@ -68,9 +70,11 @@ message ("   .. C++ compiler ......... = ${CMAKE_CXX_COMPILER}" )
 message ("   .. C++ compiler flags ... = ${CMAKE_CXX_FLAGS}" )
 message ("   .. size(void*) .......... = ${SIZEOF_VOID_P}")
 message ("   .. Memory checker ....... = ${MEMORYCHECK_COMMAND}" )
-message (" * CMake configuration:" )
-message ("   .. CMake executable ..... = ${CMAKE_COMMAND}" )
-message ("   .. CMake version ........ = ${CMAKE_VERSION}" )
-message ("   .. Module path .......... = ${CMAKE_MODULE_PATH}" )
-message ("   .. Installation prefix .. = ${CMAKE_INSTALL_PREFIX}" )
+message (" * CMake configuration:"                                     )
+message ("   .. CMake executable ..... = ${CMAKE_COMMAND}"             )
+message ("   .. CMake version ........ = ${CMAKE_VERSION}"             )
+message ("   .. Module path .......... = ${CMAKE_MODULE_PATH}"         )
+message ("   .. Installation prefix .. = ${CMAKE_INSTALL_PREFIX}"      )
+message (" * Development tools:"                                       )
+message ("   .. Python version ....... = ${PYTHON_VERSION_STRING}"     )
 message ("------------------------------------------------------------")
