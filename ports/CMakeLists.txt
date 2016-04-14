@@ -1,7 +1,5 @@
 
-add_subdirectory(gpstk)
-add_subdirectory(qt)
-
+add_subdirectory(astro)
 add_subdirectory(devel)
 add_subdirectory(editors)
 add_subdirectory(graphics)
