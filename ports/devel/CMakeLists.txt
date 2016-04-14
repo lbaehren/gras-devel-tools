@@ -1,6 +1,7 @@
 add_subdirectory(binutils)
 add_subdirectory(doxygen)
 add_subdirectory(gdb)
+add_subdirectory(gmp)
 add_subdirectory(kcachegrind)
 add_subdirectory(kdelibs)
 add_subdirectory(gperftools)
