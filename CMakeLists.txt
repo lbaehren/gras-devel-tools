@@ -5,7 +5,7 @@
 
 ## =============================================================================
 ##
-## CMake project settings
+##  CMake project settings
 ##
 ## =============================================================================
 
@@ -30,10 +30,11 @@ endif (POLICY CMP0042)
 # CMake modules
 include(ExternalProject)
 include(CheckTypeSize)
+list (INSERT CMAKE_MODULE_PATH 0 "${PROJECT_SOURCE_DIR}/modules")
 
-##
 ## =============================================================================
-## System inspection
+##
+##  System inspection
 ##
 ## =============================================================================
 
@@ -43,7 +44,7 @@ find_package(PythonInterp)
 
 ## =============================================================================
 ##
-## Configuration options
+##  Configuration options
 ##
 ## =============================================================================
 
