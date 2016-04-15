@@ -10,7 +10,7 @@
 ## =============================================================================
 
 ## Name of the project handled by CMake
-project (mettools)
+project (gras-devel-tools)
 
 set (PROJECT_VERSION_MAJOR 1)
 set (PROJECT_VERSION_MINOR 0)
@@ -41,6 +41,7 @@ list (INSERT CMAKE_MODULE_PATH 0 "${PROJECT_SOURCE_DIR}/modules")
 check_type_size("void*" SIZEOF_VOID_P BUILTIN_TYPES_ONLY)
 
 find_package(PythonInterp)
+find_package(GooglePerfTools)
 
 ## =============================================================================
 ##
