@@ -1,4 +1,6 @@
 add_subdirectory(binutils)
+add_subdirectory(ccache)
+add_subdirectory(dbus)
 add_subdirectory(doxygen)
 add_subdirectory(gdb)
 add_subdirectory(gmp)
